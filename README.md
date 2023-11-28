@@ -138,3 +138,14 @@ newLi.classList.add('special-item');
 const ul = document.querySelector('ul'); // the parent
 ul.append(newLi);
 ```
+
+You can also insert HTML directly using `.innerHTML` and (typically) string templates:
+
+```js
+const ul = document.querySelector('ul');
+
+ul.innerHTML = `
+  <li>coding</li>
+  <li>basketball</li>
+  <li>soccer</li>`;
+```

@@ -147,59 +147,15 @@ newLi.classList.add('special-item');
 // 3. Add
 const ul = document.querySelector('ul'); // the parent
 ul.append(newLi);
-```<!-- TOC -->
+```
 
-- [-2-0-intro-to-dom-f23](#-2-0-intro-to-dom-f23)
-  - [The Chrome Developer Tools](#the-chrome-developer-tools)
-  - [Linking JS files to HTML](#linking-js-files-to-html)
-  - [The document object](#the-document-object)
-  - [Selecting Single Elements in the DOM Read](#selecting-single-elements-in-the-dom-read)
-  - [Modifiying Elements in the DOM Update / Delete](#modifiying-elements-in-the-dom-update--delete)
-  - [Selecting Multiple Elements Read](#selecting-multiple-elements-read)
-  - [Creating Elements Create](#creating-elements-create)
+You can also insert HTML directly using `.innerHTML` and (typically) string templates:
 
-<!-- /TOC --><!-- TOC -->
+```js
+const ul = document.querySelector('ul');
 
-- [-2-0-intro-to-dom-f23](#-2-0-intro-to-dom-f23)
-  - [The Chrome Developer Tools](#the-chrome-developer-tools)
-  - [Linking JS files to HTML](#linking-js-files-to-html)
-  - [The document object](#the-document-object)
-  - [Selecting Single Elements in the DOM Read](#selecting-single-elements-in-the-dom-read)
-  - [Modifiying Elements in the DOM Update / Delete](#modifiying-elements-in-the-dom-update--delete)
-  - [Selecting Multiple Elements Read](#selecting-multiple-elements-read)
-  - [Creating Elements Create](#creating-elements-create)
-
-<!-- /TOC --><!-- TOC -->
-
-- [-2-0-intro-to-dom-f23](#-2-0-intro-to-dom-f23)
-  - [The Chrome Developer Tools](#the-chrome-developer-tools)
-  - [Linking JS files to HTML](#linking-js-files-to-html)
-  - [The document object](#the-document-object)
-  - [Selecting Single Elements in the DOM Read](#selecting-single-elements-in-the-dom-read)
-  - [Modifiying Elements in the DOM Update / Delete](#modifiying-elements-in-the-dom-update--delete)
-  - [Selecting Multiple Elements Read](#selecting-multiple-elements-read)
-  - [Creating Elements Create](#creating-elements-create)
-
-<!-- /TOC --><!-- TOC -->
-
-- [-2-0-intro-to-dom-f23](#-2-0-intro-to-dom-f23)
-  - [The Chrome Developer Tools](#the-chrome-developer-tools)
-  - [Linking JS files to HTML](#linking-js-files-to-html)
-  - [The document object](#the-document-object)
-  - [Selecting Single Elements in the DOM Read](#selecting-single-elements-in-the-dom-read)
-  - [Modifiying Elements in the DOM Update / Delete](#modifiying-elements-in-the-dom-update--delete)
-  - [Selecting Multiple Elements Read](#selecting-multiple-elements-read)
-  - [Creating Elements Create](#creating-elements-create)
-
-<!-- /TOC --><!-- TOC -->
-
-- [-2-0-intro-to-dom-f23](#-2-0-intro-to-dom-f23)
-  - [The Chrome Developer Tools](#the-chrome-developer-tools)
-  - [Linking JS files to HTML](#linking-js-files-to-html)
-  - [The document object](#the-document-object)
-  - [Selecting Single Elements in the DOM Read](#selecting-single-elements-in-the-dom-read)
-  - [Modifiying Elements in the DOM Update / Delete](#modifiying-elements-in-the-dom-update--delete)
-  - [Selecting Multiple Elements Read](#selecting-multiple-elements-read)
-  - [Creating Elements Create](#creating-elements-create)
-
-<!-- /TOC -->
+ul.innerHTML = `
+  <li>coding</li>
+  <li>basketball</li>
+  <li>soccer</li>`;
+```

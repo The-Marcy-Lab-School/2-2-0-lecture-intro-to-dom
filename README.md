@@ -1,5 +1,15 @@
 # 2-2-0-intro-to-dom-f23
 
+**Table of Contents**
+
+- [Chrome Developer Tools](#the-chrome-developer-tools)
+- [Linking JS files to HTML](#linking-js-files-to-html)
+- [The `document` object](#the-document-object)
+- [Selecting Single Elements in the DOM (Read)](#selecting-single-elements-in-the-dom-read)
+- [Modifiying Elements in the DOM (Update / Delete)](#modifiying-elements-in-the-dom-update--delete)
+- [Selecting Multiple Elements (Read)](#selecting-multiple-elements-read)
+- [Creating Elements (Create)](#creating-elements-create)
+
 An intro to the DOM
 
 [Slides](https://docs.google.com/presentation/d/1_4N1KPajA6HE1EPrmQ5n8ruOYVSNBp5WYl3BcPClc-U/edit?usp=sharing)
@@ -137,4 +147,59 @@ newLi.classList.add('special-item');
 // 3. Add
 const ul = document.querySelector('ul'); // the parent
 ul.append(newLi);
-```
+```<!-- TOC -->
+
+- [-2-0-intro-to-dom-f23](#-2-0-intro-to-dom-f23)
+  - [The Chrome Developer Tools](#the-chrome-developer-tools)
+  - [Linking JS files to HTML](#linking-js-files-to-html)
+  - [The document object](#the-document-object)
+  - [Selecting Single Elements in the DOM Read](#selecting-single-elements-in-the-dom-read)
+  - [Modifiying Elements in the DOM Update / Delete](#modifiying-elements-in-the-dom-update--delete)
+  - [Selecting Multiple Elements Read](#selecting-multiple-elements-read)
+  - [Creating Elements Create](#creating-elements-create)
+
+<!-- /TOC --><!-- TOC -->
+
+- [-2-0-intro-to-dom-f23](#-2-0-intro-to-dom-f23)
+  - [The Chrome Developer Tools](#the-chrome-developer-tools)
+  - [Linking JS files to HTML](#linking-js-files-to-html)
+  - [The document object](#the-document-object)
+  - [Selecting Single Elements in the DOM Read](#selecting-single-elements-in-the-dom-read)
+  - [Modifiying Elements in the DOM Update / Delete](#modifiying-elements-in-the-dom-update--delete)
+  - [Selecting Multiple Elements Read](#selecting-multiple-elements-read)
+  - [Creating Elements Create](#creating-elements-create)
+
+<!-- /TOC --><!-- TOC -->
+
+- [-2-0-intro-to-dom-f23](#-2-0-intro-to-dom-f23)
+  - [The Chrome Developer Tools](#the-chrome-developer-tools)
+  - [Linking JS files to HTML](#linking-js-files-to-html)
+  - [The document object](#the-document-object)
+  - [Selecting Single Elements in the DOM Read](#selecting-single-elements-in-the-dom-read)
+  - [Modifiying Elements in the DOM Update / Delete](#modifiying-elements-in-the-dom-update--delete)
+  - [Selecting Multiple Elements Read](#selecting-multiple-elements-read)
+  - [Creating Elements Create](#creating-elements-create)
+
+<!-- /TOC --><!-- TOC -->
+
+- [-2-0-intro-to-dom-f23](#-2-0-intro-to-dom-f23)
+  - [The Chrome Developer Tools](#the-chrome-developer-tools)
+  - [Linking JS files to HTML](#linking-js-files-to-html)
+  - [The document object](#the-document-object)
+  - [Selecting Single Elements in the DOM Read](#selecting-single-elements-in-the-dom-read)
+  - [Modifiying Elements in the DOM Update / Delete](#modifiying-elements-in-the-dom-update--delete)
+  - [Selecting Multiple Elements Read](#selecting-multiple-elements-read)
+  - [Creating Elements Create](#creating-elements-create)
+
+<!-- /TOC --><!-- TOC -->
+
+- [-2-0-intro-to-dom-f23](#-2-0-intro-to-dom-f23)
+  - [The Chrome Developer Tools](#the-chrome-developer-tools)
+  - [Linking JS files to HTML](#linking-js-files-to-html)
+  - [The document object](#the-document-object)
+  - [Selecting Single Elements in the DOM Read](#selecting-single-elements-in-the-dom-read)
+  - [Modifiying Elements in the DOM Update / Delete](#modifiying-elements-in-the-dom-update--delete)
+  - [Selecting Multiple Elements Read](#selecting-multiple-elements-read)
+  - [Creating Elements Create](#creating-elements-create)
+
+<!-- /TOC -->

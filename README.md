@@ -4,6 +4,7 @@
 
 - [The Chrome Developer Tools](#the-chrome-developer-tools)
 - [Linking JS files to HTML](#linking-js-files-to-html)
+- [What is the DOM?](#what-is-the-dom)
 - [The `document` object](#the-document-object)
   - [Selecting Single Elements in the DOM (Read)](#selecting-single-elements-in-the-dom-read)
   - [Modifiying Elements in the DOM (Update / Delete)](#modifiying-elements-in-the-dom-update--delete)
@@ -13,6 +14,7 @@
 An intro to the DOM
 
 [Slides](https://docs.google.com/presentation/d/1_4N1KPajA6HE1EPrmQ5n8ruOYVSNBp5WYl3BcPClc-U/edit?usp=sharing)
+
 
 ## The Chrome Developer Tools
 
@@ -54,6 +56,50 @@ console.table(fruits);
 ```
 
 **Q: Why does the `script` tag need to go at the end of the body?**
+
+## What is the DOM?
+
+The DOM is the **Document Object Model**. It is representation of the HTML structure of your website in a JavaScript object format.
+
+For example, consider this HTML:
+
+```html
+<h3 id="main-list-heading">Wow a list!</h3>
+<ul id='my-list'>
+  <li class="special-item">Here's an item in the main list</li>
+  <li>Oh wow another one in main list</li>
+  <li>And main list item</li>
+</ul>
+```
+
+The DOM would take the elements of this HTML structure and turn them into objects! (*This is not actually happening in your code. This is just to demonstrate the idea.*)
+
+```js
+const h3 = { 
+  id: "main-list-heading", 
+  textContent: "Wow a list!" 
+}
+
+const ul = {
+  id: "my-list",
+  children: [
+    {
+      class: 'special-item',
+      textContent: "here's an item in the main list"
+    },
+    {
+      textContent: "Oh wow another one in main list"
+    },
+    {
+      textContent: "And main list item"
+    }
+  ]
+}
+```
+
+The browser automatically generates this document object model for us! As web developers, we can use this DOM to do so much! 
+
+Let's dive in.
 
 ## The `document` object
 
@@ -164,5 +210,6 @@ const ul = document.querySelector('ul');
 ul.innerHTML = `
   <li>coding</li>
   <li>basketball</li>
-  <li>soccer</li>`;
+  <li>soccer</li>
+`;
 ```

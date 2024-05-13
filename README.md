@@ -1,14 +1,14 @@
-# 2-2-0-intro-to-dom-f23
+# Intro to the Document Object Model
 
 **Table of Contents**
 
-- [Chrome Developer Tools](#the-chrome-developer-tools)
+- [The Chrome Developer Tools](#the-chrome-developer-tools)
 - [Linking JS files to HTML](#linking-js-files-to-html)
 - [The `document` object](#the-document-object)
-- [Selecting Single Elements in the DOM (Read)](#selecting-single-elements-in-the-dom-read)
-- [Modifiying Elements in the DOM (Update / Delete)](#modifiying-elements-in-the-dom-update--delete)
-- [Selecting Multiple Elements (Read)](#selecting-multiple-elements-read)
-- [Creating Elements (Create)](#creating-elements-create)
+  - [Selecting Single Elements in the DOM (Read)](#selecting-single-elements-in-the-dom-read)
+  - [Modifiying Elements in the DOM (Update / Delete)](#modifiying-elements-in-the-dom-update--delete)
+  - [Selecting Multiple Elements (Read)](#selecting-multiple-elements-read)
+  - [Creating Elements (Create)](#creating-elements-create)
 
 An intro to the DOM
 
@@ -57,9 +57,7 @@ console.table(fruits);
 
 ## The `document` object
 
-The `document` object _is_ the DOM packaged in an object.
-
-The `document` object has create/read/update/delete (CRUD) properties and methods for interacting with the DOM.
+The `document` object _is_ the DOM packaged in an object. The properties of the object allow us to access various elements of the DOM. Each element is a **node** in the document tree and each node has a `.children` array.
 
 ```js
 console.log(document);
@@ -68,9 +66,15 @@ console.log(document.body.children);
 console.log(document.body.children[0]);
 ```
 
-## Selecting Single Elements in the DOM (Read)
+The `document` object also has methods that allow us to perform CRUD operations on the DOM:
+* **C**reate new elements (create new "nodes" in the tree)
+* **R**ead (find or "query for") existing elements
+* **U**pdate existing elements
+* **D**elete existing elements
 
-There are many other ways to grab an Element from the DOM, but `querySelector` is the most flexible. It uses CSS selector syntax
+### Selecting Single Elements in the DOM (Read)
+
+There are many ways to find an Element in the DOM, but `querySelector` is the most flexible. It uses CSS selector syntax
 
 ```js
 // returns the first p tag Element in the document
@@ -88,7 +92,7 @@ const firstOrderedListItem = document.querySelector("ol > li:nth-child(1)")
 
 More Reading: [w3Schools](https://www.w3schools.com/js/js_htmldom_elements.asp)
 
-## Modifiying Elements in the DOM (Update / Delete)
+### Modifiying Elements in the DOM (Update / Delete)
 
 Once an Element is grabbed from the DOM, we can modify it, and even delete it!
 
@@ -98,15 +102,15 @@ heading.innerText = 'hello world!';
 heading.id = 'blahblah';
 heading.classList = "vivid purple";
 
-const firstOrderedListItem = document.querySelector("ol > li:nth-child(1)")
-firstOrderedListItem.remove();
+// we don't always need to store the element in a variable to do something with it
+document.querySelector("ol > li:nth-child(1)").remove();
 ```
 
 More Reading: [w3Schools](https://www.w3schools.com/js/js_htmldom_html.asp)
 
-## Selecting Multiple Elements (Read)
+### Selecting Multiple Elements (Read)
 
-Use `document.querySelectorAll()` to grab multiple elements
+Sometimes we may want to apply a change to multiple elements at once. Use `document.querySelectorAll()` to grab multiple elements
 
 ```js
 // get all li Elements in a NodeList
@@ -119,17 +123,20 @@ const specialItems = document.querySelectorAll('.special-item');
 `querySelectorAll` returns a `NodeList` which is NOT an array. You can use bracket notation but you can't use normal Array methods.
 
 ```js
-const listItems = document.querySelectorAll('li');
-listItems[0].innerText = 'i love coding!' // changes the first list item's inner text
+// forEach does work...
+const listItems = document.querySelectorAll('#recipe-list > li');
+listItems.forEach((listItem) => {
+  listItem.classList.add('recipe-step')
+})
 
-// try to get the first 3 values --> ERROR: listItems.slice is not a function
-listItems.slice(0, 3);
+// But other methods dont... --> ERROR: listItems.slice is not a function
+listItems.slice(0, 2);
 
 // Spread into an Array first!
-const firstThree = [...listItems].slice(0,3)
+const firstThree = [...listItems].slice(0,2)
 ```
 
-## Creating Elements (Create)
+### Creating Elements (Create)
 
 The pattern:
 1. **Create**: `const newEl = document.createElement('div')`
@@ -149,7 +156,7 @@ const ul = document.querySelector('ul'); // the parent
 ul.append(newLi);
 ```
 
-You can also insert HTML directly using `.innerHTML` and (typically) string templates:
+You can also insert HTML directly using `.innerHTML` but you should be very careful about doing this. Only ever do this if the content you are adding is hard-coded (not user-generated).
 
 ```js
 const ul = document.querySelector('ul');

@@ -1,7 +1,27 @@
 /**********************************************/
 /* Helpers for Adding Movie Fun Facts */
 /**********************************************/
-const addMovieFunFacts = (movies) => {
+
+const addNumberOfMovies = (movies) => {
+  // document.querySelector lets us grab any HTML element
+  const numberOfMoviesSpan = document.querySelector('span#number-of-movies')
+
+  // querySelector returns an Element Object that we can manipulate!
+  numberOfMoviesSpan.textContent = movies.length;
+}
+
+const addAverageCasting = (movies) => {
+  // Calculate the average cast size for all movies
+  const totalCastings = movies.reduce((totalCastings, movie) => {
+    return totalCastings + movie.cast.length
+  }, 0);
+  const averageCastSize = (totalCastings / movies.length).toFixed(2);
+
+  // Target the spans and insert the data in one line
+  document.querySelector('span#average-cast-size').textContent = averageCastSize;
+}
+
+const addMovieGenreCounts = (movies) => {
   // Create a dictionary of { genre: movieCount } for all genres
   // Example: { "Comedy": 300, "Action": 250, "Drama": 390 }
   const genreCounts = {}
@@ -13,16 +33,6 @@ const addMovieFunFacts = (movies) => {
       genreCounts[genre] += 1;
     });
   });
-
-  // Reduce: Calculate the average cast size for all movies
-  const totalCastings = movies.reduce((totalCastings, movie) => {
-    return totalCastings + movie.cast.length
-  }, 0);
-  const averageCastSize = totalCastings / movies.length;
-
-  // Target the spans and insert the data
-  document.querySelector('span#number-of-movies').textContent = movies.length;
-  document.querySelector('span#average-cast-size').textContent = averageCastSize.toFixed(2);
 
   // Get the genres by name
   const genres = Object.keys(genreCounts);
@@ -92,8 +102,9 @@ const addMovies = (movies) => {
 /**************************************/
 const main = async () => {
   const movies = await fetch('./movies.json').then(res => res.json());
-
-  addMovieFunFacts(movies);
+  addNumberOfMovies(movies);
+  addAverageCasting(movies);
+  addMovieGenreCounts(movies);
   addMovies(movies);
 }
 

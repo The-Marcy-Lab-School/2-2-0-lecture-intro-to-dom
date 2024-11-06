@@ -1,10 +1,12 @@
+
+
 // executed by the browser when the 
 // script tag is loaded in the HTML
 
 console.log("hello world!");
 
 // add more code here!
-document.querySelector("#main-heading").textContent = "Hey Nirvana!"
+document.querySelector("#main-heading").textContent = "Hey!!!"
 
 const fruits = [
   { name: 'apple', color: 'red' },

@@ -101,7 +101,6 @@ const addMovies = (movies) => {
 /* Load the movies and invoke helpers */
 /**************************************/
 const main = async () => {
-  const movies = await fetch('./movies.json').then(res => res.json());
   addNumberOfMovies(movies);
   addAverageCasting(movies);
   addMovieGenreCounts(movies);

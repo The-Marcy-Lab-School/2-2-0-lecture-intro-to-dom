@@ -1,4 +1,4 @@
-module.exports = [
+const movies = [
   {
     "title": "The Grudge",
     "year": 2020,
